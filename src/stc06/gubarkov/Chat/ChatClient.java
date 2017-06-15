@@ -3,12 +3,9 @@ package stc06.gubarkov.Chat;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by admin on 15.06.2017.
- */
 public class ChatClient {
-    static int serverPort = 7777;
-    static String address = "127.0.0.1";
+    private static int serverPort = 7777;
+    private static String address = "127.0.0.1";
     public static void main(String[] args) {
         try {
             Socket socket = new Socket(address, serverPort);

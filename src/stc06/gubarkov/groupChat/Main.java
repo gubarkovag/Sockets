@@ -7,6 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Запустить клиента (C) или сервера (S)?");
+        System.out.println("Или завершить выполнение программы (E)?");
         while (true) {
             char choice = Character.toLowerCase(scanner.nextLine().charAt(0));
             switch(choice) {
@@ -16,6 +17,8 @@ public class Main {
                 case 's':
                     new ChatServer();
                     break;
+                case 'e':
+                    System.exit(0);
                 default:
                     System.out.println("Повторите ввод");
             }
