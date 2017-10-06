@@ -8,20 +8,20 @@ public class Main {
 
         System.out.println("Запустить клиента (C) или сервера (S)?");
         System.out.println("Или завершить выполнение программы (E)?");
-        while (true) {
-            char choice = Character.toLowerCase(scanner.nextLine().charAt(0));
-            switch(choice) {
-                case 'c':
-                    new ChatClient();
-                    break;
-                case 's':
-                    new ChatServer();
-                    break;
-                case 'e':
-                    System.exit(0);
-                default:
-                    System.out.println("Повторите ввод");
-            }
+        char choice = Character.toLowerCase(scanner.nextLine().charAt(0));
+        switch(choice) {
+            case 'c':
+                System.out.println("Введите номер порта сервера:");
+                new ChatClient(scanner.nextLine());
+                break;
+            case 's':
+                System.out.println("Введите номер порта сервера:");
+                new ChatServer(scanner.nextLine());
+                break;
+            case 'e':
+                System.exit(0);
+            default:
+                System.out.println("Повторите ввод");
         }
     }
 }

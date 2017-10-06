@@ -3,18 +3,17 @@ package stc06.gubarkov.groupChat;
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
+import static stc06.gubarkov.serverconsts.ServerConsts.*;
 
 public class ChatClient {
     private Socket socket;
     private DataInputStream in;
     private DataOutputStream out;
-    private final int serverPort = 7777;
-    private final String address = "127.0.0.1";
 
-    public ChatClient() {
+    public ChatClient(String serverPort) {
         Scanner scanner = new Scanner(System.in);
         try {
-            socket = new Socket(address, serverPort);
+            socket = new Socket(SERVERADDRESS, Integer.parseInt(serverPort));
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
 

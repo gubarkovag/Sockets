@@ -7,19 +7,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 public class ChatServer {
-    private int port = 7777;
     private ServerSocket serverSocket;
     private List<ChatClient> chatClients = new ArrayList<>();
     private List<Connection> connections =
             Collections.synchronizedList(new ArrayList<Connection>());
 
-    public ChatServer() {
+    public ChatServer(String port) {
         try {
-            serverSocket = new ServerSocket(port);
+            serverSocket = new ServerSocket(Integer.parseInt(port));
 
             while (true) {
                 Socket socket = serverSocket.accept();
